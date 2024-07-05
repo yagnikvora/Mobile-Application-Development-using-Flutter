@@ -1,0 +1,43 @@
+create database in SQLite
+right and connect db
+create a new table 
+add data into the table
+create database a folder under asset in AStudio and add db file in it
+load db file inside to pubspec.yaml inside assets: then pub get
+create a saparate database folder inside lib and create a new dart file myDatabase
+add dependacies sqflite and path_provider in pubspec.yaml
+import all file from git
+change database name from toe copied data file
+create a function for get by id async
+{
+database db = await initDatabase();
+List<Map<String,dynamic>> userList = await db.rawQuery("SELECT * FROM database");
+return userList ;
+return await (await initDatabase()).rawQuery("SELECT * FROM database");
+}
+create a new dart file for desing databaseCode
+inside body create FytureBuilder() and call Mydatabase().copyPaste mathod
+then create a builder mathode for it
+che data is comes in hasdata and display coping......
+inside the if return FutureBuilder() change the snapshot to snapshotList
+insede the future call MyDatabase().getDatabase()
+inside the builder if(snapshoteList.hadData) else CirclularProgresIndicator();
+inside if return ListView.builder(itemCount:snapshotList.data.lenght!,....)
+insed the itemBuilder return Text(snapshotList.data![index]["UserName"])
+for delete create a new mathod deleteRecord()
+{
+Database db = await initDatabase(int ID);
+int delete = await db.delete(tablename,where: "UserId = ?",whereArgs:[ID]);
+
+
+
+}
+
+
+
+
+
+
+
+
+ref-link  --  https://github.com/MaulikBhatt7
